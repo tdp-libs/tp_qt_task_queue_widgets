@@ -21,6 +21,8 @@ namespace tdp_task_queue_widgets
 //##################################################################################################
 struct TaskQueueListWidget::Private
 {
+  TP_NONCOPYABLE(Private);
+
   TaskQueueListWidget* q;
   tp_task_queue::TaskQueue* taskQueue;
 
