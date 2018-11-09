@@ -2,9 +2,9 @@
 #define tdp_task_queue_widgets_Globals_h
 
 #if defined(TDP_TASK_QUEUE_WIDGETS_LIBRARY)
-#  define TDP_TASK_QUEUE_WIDGETS_SHARED_EXPORT
+#  define TDP_TASK_QUEUE_WIDGETS_SHARED_EXPORT TP_EXPORT
 #else
-#  define TDP_TASK_QUEUE_WIDGETS_SHARED_EXPORT
+#  define TDP_TASK_QUEUE_WIDGETS_SHARED_EXPORT TP_IMPORT
 #endif
 
 #include "tp_utils/StringID.h"
