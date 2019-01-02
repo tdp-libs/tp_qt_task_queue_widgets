@@ -1,8 +1,6 @@
 TARGET = tdp_task_queue_widgets
 TEMPLATE = lib
 
-QT += gui widgets
-
 DEFINES += TDP_TASK_QUEUE_WIDGETS_LIBRARY
 
 SOURCES += src/Globals.cpp
