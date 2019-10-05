@@ -1,7 +1,7 @@
-#ifndef tdp_task_queue_widgets_TaskQueueListWidget_h
-#define tdp_task_queue_widgets_TaskQueueListWidget_h
+#ifndef tp_qt_task_queue_widgets_TaskQueueListWidget_h
+#define tp_qt_task_queue_widgets_TaskQueueListWidget_h
 
-#include "tdp_task_queue_widgets/Globals.h"
+#include "tp_qt_task_queue_widgets/Globals.h"
 
 #include <QWidget>
 
@@ -10,7 +10,7 @@ namespace tp_task_queue
 class TaskQueue;
 }
 
-namespace tdp_task_queue_widgets
+namespace tp_qt_task_queue_widgets
 {
 
 //##################################################################################################
@@ -18,7 +18,7 @@ namespace tdp_task_queue_widgets
 /*!
 
 */
-class TDP_TASK_QUEUE_WIDGETS_SHARED_EXPORT TaskQueueListWidget: public QWidget
+class tp_qt_TASK_QUEUE_WIDGETS_SHARED_EXPORT TaskQueueListWidget: public QWidget
 {
   Q_OBJECT
 public:

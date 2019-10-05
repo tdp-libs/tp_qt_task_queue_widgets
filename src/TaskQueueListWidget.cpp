@@ -1,7 +1,7 @@
-#include "tdp_task_queue_widgets/TaskQueueListWidget.h"
+#include "tp_qt_task_queue_widgets/TaskQueueListWidget.h"
 
-#include "tdp_qt_utils/TimerCallback.h"
-#include "tdp_qt_utils/CrossThreadCallback.h"
+#include "tp_qt_utils/TimerCallback.h"
+#include "tp_qt_utils/CrossThreadCallback.h"
 
 #include "tp_task_queue/Task.h"
 #include "tp_task_queue/TaskQueue.h"
@@ -16,7 +16,7 @@
 
 #include <unordered_set>
 
-namespace tdp_task_queue_widgets
+namespace tp_qt_task_queue_widgets
 {
 //##################################################################################################
 struct TaskQueueListWidget::Private
@@ -29,7 +29,7 @@ struct TaskQueueListWidget::Private
   QListWidget* listWidget{nullptr};
 
   std::function<void()> statusChangedCallback;
-  tdp_qt_utils::CrossThreadCallback statusChangedCrossThreadCallback;
+  tp_qt_utils::CrossThreadCallback statusChangedCrossThreadCallback;
 
   struct TaskDetails_lt
   {
@@ -48,8 +48,8 @@ struct TaskQueueListWidget::Private
 
   std::unordered_map<int64_t, TaskDetails_lt> items;
 
-  QIcon pauseIcon{":/tdp_icons_technical/pause.png"};
-  QIcon playIcon{":/tdp_icons_technical/play.png"};
+  QIcon pauseIcon{":/tp_qt_icons_technical/pause.png"};
+  QIcon playIcon{":/tp_qt_icons_technical/play.png"};
 
   //################################################################################################
   Private(TaskQueueListWidget* q_, tp_task_queue::TaskQueue* taskQueue_):
