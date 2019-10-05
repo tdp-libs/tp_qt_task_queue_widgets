@@ -18,7 +18,7 @@ namespace tp_qt_task_queue_widgets
 /*!
 
 */
-class tp_qt_TASK_QUEUE_WIDGETS_SHARED_EXPORT TaskQueueListWidget: public QWidget
+class TP_QT_TASK_QUEUE_WIDGETS_SHARED_EXPORT TaskQueueListWidget: public QWidget
 {
   Q_OBJECT
 public:
