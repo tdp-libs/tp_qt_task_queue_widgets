@@ -1,5 +1,7 @@
 #include "tp_qt_task_queue_widgets/TaskQueueListWidget.h"
 
+#include "tp_qt_widgets/Globals.h"
+
 #include "tp_qt_utils/TimerCallback.h"
 #include "tp_qt_utils/CrossThreadCallback.h"
 
@@ -230,6 +232,7 @@ TaskQueueListWidget::TaskQueueListWidget(tp_task_queue::TaskQueue* taskQueue, QW
   l->setContentsMargins(0, 0, 0, 0);
 
   d->listWidget = new QListWidget();
+  tp_qt_widgets::stayAtBottom(d->listWidget);
   l->addWidget(d->listWidget);
 
   d->update();
