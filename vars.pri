@@ -8,3 +8,6 @@ HEADERS += inc/tp_qt_task_queue_widgets/Globals.h
 
 SOURCES += src/TaskQueueListWidget.cpp
 HEADERS += inc/tp_qt_task_queue_widgets/TaskQueueListWidget.h
+
+SOURCES += src/UITask.cpp
+HEADERS += inc/tp_qt_task_queue_widgets/UITask.h
