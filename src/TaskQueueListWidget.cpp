@@ -30,6 +30,7 @@ struct TaskQueueListWidget::Private
   tp_task_queue::TaskQueue* taskQueue;
 
   QListWidget* listWidget{nullptr};
+  QLabel* statsLabel{nullptr};
 
   std::function<void()> statusChangedCallback;
   tp_qt_utils::CrossThreadCallback statusChangedCrossThreadCallback;
@@ -219,6 +220,11 @@ struct TaskQueueListWidget::Private
           c++;
         }
       }
+
+      //Stats
+      {
+        statsLabel->setText(QString("Count: %1").arg(tasks.size()));
+      }
     });
   }
 };
@@ -228,12 +234,15 @@ TaskQueueListWidget::TaskQueueListWidget(tp_task_queue::TaskQueue* taskQueue, QW
   QWidget(parent),
   d(new Private(this, taskQueue))
 {
-  auto l = new QHBoxLayout(this);
+  auto l = new QVBoxLayout(this);
   l->setContentsMargins(0, 0, 0, 0);
 
   d->listWidget = new QListWidget();
   tp_qt_widgets::stayAtBottom(d->listWidget);
   l->addWidget(d->listWidget);
+
+  d->statsLabel = new QLabel();
+  l->addWidget(d->statsLabel);
 
   d->update();
 }
