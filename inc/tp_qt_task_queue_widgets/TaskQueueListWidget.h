@@ -21,6 +21,7 @@ namespace tp_qt_task_queue_widgets
 class TP_QT_TASK_QUEUE_WIDGETS_SHARED_EXPORT TaskQueueListWidget: public QWidget
 {
   Q_OBJECT
+  TP_DQ;
 public:
   //################################################################################################
   TaskQueueListWidget(tp_task_queue::TaskQueue* taskQueue, QWidget* parent = nullptr);
@@ -30,11 +31,6 @@ public:
 
   //################################################################################################
   std::vector<int64_t> selectedTasks();
-
-private:
-  struct Private;
-  Private* d;
-  friend struct Private;
 };
 
 }

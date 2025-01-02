@@ -17,6 +17,7 @@ namespace tp_qt_task_queue_widgets
 //! Execute a task to update the UI.
 class TP_QT_TASK_QUEUE_WIDGETS_SHARED_EXPORT UITask
 {
+  TP_DQ;
 public:
   //################################################################################################
   /*!
@@ -33,11 +34,6 @@ public:
 
   //################################################################################################
   tp_task_queue::Task* task();
-
-private:
-  struct Private;
-  Private* d;
-  friend struct Private;
 };
 
 }

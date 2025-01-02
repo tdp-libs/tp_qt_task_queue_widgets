@@ -26,7 +26,7 @@ struct TaskQueueListWidget::Private
   TP_REF_COUNT_OBJECTS("tp_qt_task_queue_widgets::TaskQueueListWidget::Private");
   TP_NONCOPYABLE(Private);
 
-  TaskQueueListWidget* q;
+  Q* q;
   tp_task_queue::TaskQueue* taskQueue;
 
   QListWidget* listWidget{nullptr};
@@ -56,7 +56,7 @@ struct TaskQueueListWidget::Private
   QIcon playIcon{":/tp_qt_icons_technical/play.png"};
 
   //################################################################################################
-  Private(TaskQueueListWidget* q_, tp_task_queue::TaskQueue* taskQueue_):
+  Private(Q* q_, tp_task_queue::TaskQueue* taskQueue_):
     q(q_),
     taskQueue(taskQueue_),
     statusChangedCrossThreadCallback([&](){update();})
