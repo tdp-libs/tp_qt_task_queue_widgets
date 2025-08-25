@@ -2,21 +2,16 @@
 
 #include "tp_qt_widgets/Globals.h"
 
-#include "tp_qt_utils/TimerCallback.h"
 #include "tp_qt_utils/CrossThreadCallback.h"
 
 #include "tp_task_queue/Task.h"
 #include "tp_task_queue/TaskQueue.h"
-
-#include "tp_utils/DebugUtils.h"
 
 #include <QListWidget>
 #include <QLabel>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QVBoxLayout>
-
-#include <unordered_set>
 
 namespace tp_qt_task_queue_widgets
 {
@@ -132,7 +127,7 @@ struct TaskQueueListWidget::Private
           taskDetails.pauseButton->setIconSize(QSize(iconSz, iconSz));
           buttonLayout->addWidget(taskDetails.pauseButton);
           auto taskID = taskStatus.taskID;
-          connect(taskDetails.pauseButton, &QPushButton::clicked, [=](){taskQueue->togglePauseTask(taskID);});
+          connect(taskDetails.pauseButton, &QPushButton::clicked, [this, taskID](){taskQueue->togglePauseTask(taskID);});
 
           taskDetails.progressBar = new QProgressBar();
           taskDetails.progressBar->setEnabled(taskStatus.progress>=0);
